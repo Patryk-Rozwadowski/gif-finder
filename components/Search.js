@@ -2,12 +2,20 @@
     constructor(props, context) {
         super(props, context);
         this.state = {
-            searchingText: ''
+          searchingText: ''
         };
     };
     handleOnClick(event) {
         const searchingText = event.target.value;
         this.setState({ searchingText: searchingText });
+        if (searchingText.length > 2) {
+        this.props.onSearch(searchingText);
+        }
+    }
+    handleKeyUp(event) {
+      if (event.keyCode === 13) {
+        this.props.onSearch(this.state.searchingText);
+      }
     }
     render() {
         const styles = {
@@ -19,6 +27,7 @@
         return <input
             type="text"
             onChange={this.handleChange}
+            onKeyUp={this.handleKeyUp}
             placeholder="Tutaj wpisz wyszukiwaną frazę"
             style={styles}
             value={this.state.searchTerm}
