@@ -1,36 +1,39 @@
-﻿class Search extends React.Component{
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-          searchingText: ''
-        };
-    };
-    handleOnClick(event) {
-        const searchingText = event.target.value;
-        this.setState({ searchingText: searchingText });
-        if (searchingText.length > 2) {
-        this.props.onSearch(searchingText);
-        }
-    }
-    handleKeyUp(event) {
-      if (event.keyCode === 13) {
-        this.props.onSearch(this.state.searchingText);
-      }
-    }
-    render() {
-        const styles = {
-            fontSize: '1.5em',
-            width: '90%',
-            maxWidth: '350px'
-        };
+Search = React.createClass({
+	getInitialState() {
+		return {
+			searchingText: ''
+		};
+	},
 
-        return <input
-            type="text"
-            onChange={this.handleChange}
-            onKeyUp={this.handleKeyUp}
-            placeholder="Tutaj wpisz wyszukiwaną frazę"
-            style={styles}
-            value={this.state.searchTerm}
-        />
-    }
-};
+	handleChange: function (event) {
+		let searchingText = event.target.value;
+		this.setState ({searchingText: searchingText});
+
+		if (searchingText.length > 2) {
+			this.props.onSearch(searchingText);
+		}
+	},
+
+	handleKeyUp: function(event) {
+		if (event.keyCode === 13) {
+			this.props.onSearch(this.state.searchingText);
+		}
+	},
+
+	render() {
+		const styles = {
+			fontSize: '1.5em',
+			width: '90%',
+			maxWidth: '350px'
+		};
+
+		return <input
+					type='text'
+					onChange={this.handleChange}
+					onKeyUp={this.handleKeyUp}
+					placeholder=' Enter the search phrase here '
+					style={styles}
+					value={this.state.searchTerm}
+				/>
+	}
+});
