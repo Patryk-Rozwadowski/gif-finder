@@ -49,7 +49,7 @@ App = React. createClass ({
 		return (
 			<div className='searcher--container'>
 				<h1 className='searcher--title'>Gif Engine!</h1>
-				<p className='searcher--text'>Find Gif on <a className='searcher--text' href='http://giphy.com'> giphy </a> .Press enter to get more gifs.</p>
+				<p className='searcher--text'>Find Gif on <a className='searcher--text' href='http://giphy.com'> giphy </a>. Press enter to get more gifs.</p>
 				<Search onSearch={this.handleSearch}/>
 				<Gif
 					loading={this.state.loading}
