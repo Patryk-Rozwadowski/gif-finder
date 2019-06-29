@@ -1,0 +1,13 @@
+body { background-color: #222; }
+
+.searcher--container { margin: 50px auto; text-align: center; }
+
+input[type='text'] { font-family: 'Roboto', sans-serif; font-weight: 400; padding: 5px; margin-bottom: 20px; }
+
+.searcher--element { font-family: 'Roboto', sans-serif; font-weight: 300; color: #fff; color: #fff; }
+
+.searcher--title { font-family: 'Roboto', sans-serif; font-weight: 700; color: #fff; }
+
+.searcher--text { font-family: 'Roboto', sans-serif; font-weight: 300; color: #fff; }
+
+a { text-decoration: none; }

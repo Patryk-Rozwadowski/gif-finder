@@ -1,0 +1,45 @@
+@mixin roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color:#fff;
+}
+@mixin roboto-medium {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+@mixin roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+body {
+  background-color: #222;
+}
+
+.searcher--container {
+  margin: 50px auto;
+  text-align: center;
+}
+
+input[type='text'] {
+  @include roboto-medium;
+  padding:5px;
+  margin-bottom: 20px;
+}
+
+.searcher--element {
+  @include roboto-light;
+  color: #fff;
+}
+
+.searcher--title {
+  @include roboto-bold;
+  color: #fff;
+}
+
+.searcher--text {
+  @include roboto-light;
+}
+
+a {
+  text-decoration: none;
+}

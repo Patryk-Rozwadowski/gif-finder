@@ -46,15 +46,10 @@ App = React. createClass ({
 	},
 
 	render: function () {
-		const styles = {
-			margin: '0 auto',
-			textAlign: 'center',
-			widht: '90%'
-		};
 		return (
-			<div style={styles}>
-				<h1>Gif Engine!</h1>
-				<p>Find Gif on <a href='http://giphy.com'> giphy </a> .Press enter to get more gifs.</p>
+			<div className='searcher--container'>
+				<h1 className='searcher--title'>Gif Engine!</h1>
+				<p className='searcher--text'>Find Gif on <a className='searcher--text' href='http://giphy.com'> giphy </a> .Press enter to get more gifs.</p>
 				<Search onSearch={this.handleSearch}/>
 				<Gif
 					loading={this.state.loading}
